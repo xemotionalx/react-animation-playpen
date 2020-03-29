@@ -1,11 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import './App.css';
+import SimpleTween from "./components/simple-tween.js";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'React'
+    };
+  }
 
+  render() {
+    return (
+      <div className="container">
+        <SimpleTween />
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
